@@ -3,6 +3,16 @@ from openai import OpenAI
 
 # --- 1. 页面基础配置 ---
 st.set_page_config(page_title="无限世界 RPG", page_icon="🎲")
+# --- 隐藏 Streamlit 默认的菜单和页脚 ---
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.title("🎲 无限世界: AI 互动文字游戏")
 
 # --- 2. 侧边栏：输入 API Key ---
